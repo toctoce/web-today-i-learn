@@ -18,7 +18,9 @@
     <nav class="top-nav">
       <span class="nav-logo">My Page</span>
       <ul class="nav-links">
-        <li><a href="#about">자기소개</a></li>
+        <li><a href="#about">프로필</a></li>
+        <li><a href="#intro">자기소개</a></li>
+        <li><a href="#info">기본 정보</a></li>
         <li><a href="#gallery">갤러리</a></li>
         <li><a href="#works">인생 작품</a></li>
         <li><a href="#til">TIL</a></li>
@@ -42,7 +44,7 @@
 
     <main>
       <!-- 자기소개 -->
-      <section class="content-section">
+      <section class="content-section" id="intro">
         <h2>자기소개</h2>
         <p>
           백엔드 크루 봉구스입니다. 밥버거 안 먹은지 5년 되었습니다.
@@ -107,6 +109,11 @@
                   평범해 보이는 일상 속에서도 스스로 질문하고 진짜 삶을 찾아 나가는 모습이 오래 기억에 남는 작품입니다.
                   익숙한 환경을 당연하게 받아들이지 말고, 내가 원하는 방향을 직접 선택해야 한다는 점을 느끼게 해줬습니다.
                 </p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/loTIzXAS7v4?si=1cdUBYKWKk8a0PfW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <p>
+                  영상이 보이지 않으면
+                  <a href="https://www.youtube.com/watch?v=loTIzXAS7v4" target="_blank" rel="noreferrer">유튜브에서 예고편 바로 보기</a>
+                </p>
               </div>
             </article>
           </li>
@@ -121,14 +128,6 @@
                   해리 포터는 성장, 우정, 용기의 이야기가 모두 담겨 있어서 오래 좋아하는 작품입니다.
                   어려운 순간에도 함께하는 사람이 있다는 점과 끝까지 포기하지 않는 태도가 특히 인상 깊었습니다.
                 </p>
-                <iframe
-                  src="https://www.youtube.com/embed/l91Km49W9qI"
-                  title="해리 포터와 마법사의 돌 공식 예고편"
-                  loading="lazy"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen
-                ></iframe>
               </div>
             </article>
           </li>
@@ -162,11 +161,15 @@
 
         <!-- TIL 목록: 폼으로 등록하면 여기에 항목이 추가됩니다 -->
         <div class="til-list" id="til-list">
-          <!-- 아래는 예시 항목입니다. 자유롭게 수정하거나 삭제하세요 -->
           <article class="til-item">
-            <time>2026-03-15</time>
-            <h3>HTML 시멘틱 태그</h3>
-            <p>header, nav, main, section, article, footer 등 시멘틱 태그의 역할과 사용법을 배웠다.</p>
+            <time datetime="2026-03-19">2026-03-19</time>
+            <h3>학습 주제: 시멘틱 태그와 페이지 구조</h3>
+            <p>header, nav, main, section 같은 시멘틱 태그를 활용하면 페이지를 역할별로 나눌 수 있고, 내비게이션 하이퍼링크로 원하는 섹션으로 쉽게 이동할 수 있다는 점을 배웠다.</p>
+          </article>
+          <article class="til-item">
+            <time datetime="2026-03-19">2026-03-19</time>
+            <h3>학습 주제: 이미지와 alt 속성</h3>
+            <p>img 태그에는 alt를 함께 작성해야 이미지가 보이지 않는 상황에서도 내용을 전달할 수 있고, 접근성과 문서 이해도를 높이는 데 도움이 된다는 점을 정리했다.</p>
           </article>
         </div>
       </section>
