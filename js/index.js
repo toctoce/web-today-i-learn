@@ -1,12 +1,52 @@
-// TODO: TIL 폼 등록 기능을 구현하세요
-// 1. 폼 요소와 목록 요소를 querySelector로 선택합니다.
-// 2. 폼의 submit 이벤트를 감지하여 새 TIL 항목을 목록에 추가합니다.
-
 const tilForm = document.querySelector("#til-form");
 const tilList = document.querySelector("#til-list");
+const tilDateInput = document.querySelector("#til-date");
+const tilTitleInput = document.querySelector("#til-title");
+const tilContentInput = document.querySelector("#til-content");
 
-tilForm.addEventListener("submit", function (event) {
-  event.preventDefault();
+function formatDateLabel(dateValue) {
+  return dateValue;
+}
 
-  // TODO: 입력값을 가져와서 새 TIL 항목을 만들어 목록에 추가하세요
-});
+function createTilItem(date, title, content) {
+  const tilItem = document.createElement("article");
+  tilItem.className = "til-item";
+
+  const time = document.createElement("time");
+  time.setAttribute("datetime", date);
+  time.textContent = formatDateLabel(date);
+
+  const heading = document.createElement("h3");
+  heading.textContent = `학습 주제: ${title}`;
+
+  const paragraph = document.createElement("p");
+  paragraph.textContent = content;
+
+  tilItem.append(time, heading, paragraph);
+
+  return tilItem;
+}
+
+if (tilDateInput) {
+  tilDateInput.value = new Date().toISOString().split("T")[0];
+}
+
+if (tilForm && tilList && tilDateInput && tilTitleInput && tilContentInput) {
+  tilForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const date = tilDateInput.value;
+    const title = tilTitleInput.value.trim();
+    const content = tilContentInput.value.trim();
+
+    if (!date || !title || !content) {
+      return;
+    }
+
+    const newTilItem = createTilItem(date, title, content);
+    tilList.prepend(newTilItem);
+    tilForm.reset();
+    tilDateInput.value = new Date().toISOString().split("T")[0];
+    tilTitleInput.focus();
+  });
+}
